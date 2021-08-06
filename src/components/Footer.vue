@@ -1,8 +1,9 @@
 <template>
   <div class="footer-box row">
-      <div class="col-8">
-          <h1>Footer</h1>
-          <div>This is a project by Paul Burgess</div>
+      <div class="footer-info col-8">
+          <h1>Footer Title Here!</h1>
+          <p>This is a project by Paul Burgess. You can uses this             in anyway you wish as long as it is <b>NON-COMMERCIAL</b>.
+            This project uses Bootstrap and FontAwesome for stylization. If you would like to get in contact with me please use one of the links to the right.</p>
       </div>
       
 
@@ -32,6 +33,12 @@
               </li>
           </ul>
       </div>
+  <div class="footer-copyright row">
+    
+    <p>© 2021 Copyright: <a href="#">Paul Burgess</a></p>
+    <p>All rights reserved.</p>
+    
+  </div>
   </div>
    
 </template>
@@ -47,8 +54,17 @@ export default {
 
 <style>
     .footer-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align:center;
         background-color: var(--clr-bg-hf);
         color: var(--clr-text);
         padding-top:1rem;
+    }
+    .footer-copyright{
+      width:100%;
+      padding-top: 0.5rem;
+      background-color: rgba(0, 0, 0, 0.2);
     }
 </style>
