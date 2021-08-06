@@ -10,12 +10,12 @@
           
           <ul  class="list-unstyled">
               <li>
-                  <h5> Check Me Out!</h5>
+                  <h5>Follow Me</h5>
                 </li>
               <li>
                 <a
                     class="btn btn-primary btn-floating m-1"
-                    style="background-color: #0082ca;"
+                    style="background-color: #0077b5;"
                     href="https://www.linkedin.com/in/paul-m-burgess/"
                     role="button">
                     <i class="fab fa-linkedin-in"></i>

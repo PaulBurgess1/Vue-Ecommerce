@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Header></Header>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -30,6 +30,7 @@ export default {
     --clr-text: azure;
 }
 #app {
+  /*For Accessability*/
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

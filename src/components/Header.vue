@@ -1,10 +1,10 @@
 <template>
   <div class="header-container">
     <!--Row-->
-    <div class="header-top row">
+    <div class="row">
         <div class="header-title col-8">
           <i class="fas fa-frog"></i>
-          Title
+          <h1>Title</h1>
         </div>
         <div class="header-login col-4">
           <a class="header-cart">
@@ -13,6 +13,7 @@
             </span>
             <i class="fas fa-shopping-cart"></i>
           </a>
+          
           <div class="header-nolog">
             <a class="btn btn-success" href=""><i class="fas fa-user"></i>  Login</a>
             <a class="btn btn-warning" href=""><i class="fas fa-user-plus"></i>  Sign Up</a>
@@ -25,7 +26,7 @@
     </div>
     <!--Row-->
     <div class="row">
-      <div class="header-categories col">
+      <div class="header-categories col-12">
         <span class="category-btn">
           <i class="fas fa-bars"></i>
           All
@@ -37,7 +38,7 @@
     </div>
     <!--Row-->
     <div class="row">
-      <div class="header-subcategories col">
+      <div class="header-subcategories col-12">
         <span class="category-btn">
           sub-categories
           </span>
@@ -65,23 +66,28 @@ export default {
     align-content: center;
   }
   .header-title{
+    background-color: var(--clr-bg-hf);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
+   
+  }
+  .header-title h1, .header-title i{
+    background-image: 
+      linear-gradient(25deg, green, greenyellow);
+    background-clip: text;
+    color: transparent;
   }
   .header-login{
+    background-color: var(--clr-bg-hf);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:auto;
+    
     padding: auto;
     
   }
-  .header-login > div{
-    height:fill;
-  }
-
   .header-cart{
     display: flex;
     justify-content: center;
@@ -109,6 +115,10 @@ export default {
   }
   /*categories*/
   .header-categories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2rem;
     background-color: 	hsl(210, 10%, 35%);
     border-bottom: 1px solid black;
   }
@@ -125,6 +135,9 @@ export default {
     border: 1px solid var(--clr-text);
   }
   .header-subcategories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: 	hsl(210, 10%, 35%);
     border-bottom: 1px solid black;
   }
@@ -134,11 +147,14 @@ export default {
       font-size: 2rem;
     }
     .btn{
-      width:2.55rem;
+      
       padding:2px;
-      font-size: 0.6em;
+      font-size: 1rem;
     }
     .header-nolog .btn i{
+      display: none;
+    }
+    .header-nolog .btn:last-child{
       display: none;
     }
     .header-cart > *{
