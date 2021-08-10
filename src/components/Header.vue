@@ -75,7 +75,7 @@ export default {
   }
   .header-title h1, .header-title i{
     background-image: 
-      linear-gradient(25deg, green, greenyellow);
+      linear-gradient(25deg, var(--clr-primary), var(--clr-secondary));
     background-clip: text;
     color: transparent;
   }
@@ -119,11 +119,11 @@ export default {
     justify-content: center;
     align-items: center;
     min-height: 2rem;
-    background-color: 	hsl(210, 10%, 35%);
+    background-color: 	var(--clr-bg-hf-secondary);
     border-bottom: 1px solid black;
   }
   .category-btn{
-    background-color: 	hsl(210, 10%, 45%);
+    background-color: 	var(--clr-bg-hf-btn);
     padding: 0.15rem;
     border-radius: 0.4rem;
     border: 1px solid transparent;
