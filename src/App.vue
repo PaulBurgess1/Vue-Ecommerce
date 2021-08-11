@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <Header></Header>
     <router-view/>
     
@@ -16,7 +16,7 @@ export default {
   components: {
     Header,
     Footer,
-  }
+  },
 }
 </script>
 
@@ -38,6 +38,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
 }
 /*Login & Registration*/
 .form-container{
@@ -78,4 +80,38 @@ export default {
         padding-bottom: 1rem;
         margin-bottom: 1rem;
     }
+    /*Home and product*/
+    .no-db{
+  border: 1px solid red;
+}
+.product-list{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding:1rem 1rem;
+}
+.product-item{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);;
+  border-radius: 0rem 0rem 1rem 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+.product-item a{
+  text-decoration: none;
+}
+.product-item img{
+  max-height: 17rem;
+}
+.card-footer span{
+  color: red;
+}
 </style>

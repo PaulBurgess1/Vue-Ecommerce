@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Red-Eyed Tree Frog",
+	  "imgurl": "https://cdn.britannica.com/70/161670-050-8E5BCC80/Red-eyed-tree-frog.jpg",
+      "category": "Pet",
+	  "sub-categories":["Amphibian", "Frog"],
+	  "stock": 4,
+	  "price": 39.99,
+	  "sale": 0.0,
+	  "desc": "Agalychnis callidryas, known as the red-eyed tree frog, is an arboreal hylid native to Neotropical rainforests where it ranges from Mexico, through Central America, to Colombia. It is sometimes kept in captivity. The scientific name of the red-eyed treefrog, A. callidryas, comes from the Greek words kalos (beautiful) and dryas (a tree or wood nymph)."
+    },
+	{
+      "id": 2,
+      "name": "Black Rain Frog",
+	  "imgurl": "https://static.boredpanda.com/blog/wp-content/uploads/2015/05/frog-photography-27__880.jpg",
+      "category": "Pet",
+	  "sub-categories":["Amphibian", "Frog"],
+	  "stock": 8,
+	  "price": 39.99,
+	  "sale": 0.05,
+	  "desc": "Breviceps fuscus, also known as black rain frog, plain rain frog, brown short-headed frog, and Tsitsikama rainfrog, and is a species of frogs in the family Brevicipitidae. It is endemic to South Africa. The specific name fuscus refers to the dark coloration of this species."
+    },
+	{
+		"id": 3,
+		"name": "Desert Rain Frog",
+		"imgurl": "https://www.treehugger.com/thmb/jxXFH74uj9qqnsKYnNtwSoa0O4Q=/774x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/rainfrog-50ecbc63ae8d404b9c6a257319bd4d7c.jpg",
+		"category": "Pet",
+		"sub-categories":["Amphibian", "Frog"],
+		"stock": 0,
+		"price": 399.99,
+		"sale": 0.0,
+		"desc": "The desert rain frog, web-footed rain frog, or Boulenger's short-headed frog (Breviceps macrops) is a species of frog in the family Brevicipitidae. It is found in Namibia and South Africa. Its natural habitat is the narrow strip of sandy shores between the sea and the sand dunes. It is threatened by habitat loss by such factors as mining and tourism."
+	  }
+	]
+}

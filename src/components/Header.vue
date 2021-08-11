@@ -5,7 +5,7 @@
         <div class="header-title col-8">
           <router-link to="/">
             <i class="fas fa-frog"></i>
-            Title
+            <span> Paul's Exotic Pet Store</span>
           </router-link>
         </div>
         <div class="header-login col-4">
@@ -73,13 +73,18 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
+    
    
   }
-  .header-title h1, .header-title i{
+  .header-title a{
+    text-decoration:none;
+  }
+  .header-title span, .header-title i{
     background-image: 
       linear-gradient(25deg, var(--clr-primary), var(--clr-secondary));
     background-clip: text;
     color: transparent;
+    
   }
   .header-login{
     background-color: var(--clr-bg-hf);

@@ -1,38 +1,76 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <div class="product-list" v-for="product in products" :key="product.id">
-      <router-link :to="{ name: 'Product', params: {id: product.id} }">
-        <h2>{{product.id}}</h2>
-        <h3>{{product.name}}</h3>
-      </router-link>
-
-
+  <div class="home" >
     
+    <div class="no-db" v-if="products.length===0"> 
+      Error with database, no products 
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="card-deck product-list" v-for="product in products.products" :key="product.id">
+      
+      <div class="card product-item">
+        <router-link  :to="{ name: 'Product', params: {id: product.id} }">
+          <img class="card-img-top" v-bind:src="product.imgurl">
+          <div class="card-body">
+            <h5 class="card-title"><b>{{product.name}}</b></h5>
+            <p class="card-text">Category: {{product.category}}</p>
+            <p class="card-text">{{product.desc.substring(0, 50)}}...</p>
+            <div class="card-footer">
+              <h5 v-if="product.stock===0"><span>Out Of Stock</span></h5>
+              <h5 v-else-if="product.sale===0.0">$ {{product.price}}</h5>
+              <h5 v-else><s>$ {{product.price}}</s> <span>$ {{(product.price*(1-product.sale)).toFixed(2)}}</span></h5>
+            </div>
+            
+          </div>
+        </router-link>
+      </div><!--Item-->
+      
+    </div><!--List-->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  },
+  
   data(){
     return {
-      products:[
-      {id: 1, name:"prod1"},
-      {id: 2, name:"prod2"},
-      {id: 3, name:"prod3"}
-
-  ]
+      PROJECT_ID: 'vue-ecommerce-9da31-default-rtdb',
+      query:'',
+      products:[]
     }
-  }
-  
+  },
+  methods:{
+    setProducts (data){
+      if(data){
+        this.products = data[0];
+      }
+    },
+    
+    
+  },//methods
+  //Pre-load
+  mounted () {
+      console.log("mounting");
+      let q= "https://"+this.PROJECT_ID+".firebaseio.com/products/.json";
+      try {
+        fetch(q)
+        .then(res => {
+          if (res.status == 200){
+              let data =res.json();
+              return data;
+            }
+            else{
+              alert("Error "+res.status+": "+res.statusText);
+              return;
+            }
+        })
+        .then(this.setProducts);
+      } catch (error) {
+        alert(error.message);
+      }
+      console.log(this.products);
+    },
 }
 </script>
