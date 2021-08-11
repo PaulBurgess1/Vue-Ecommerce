@@ -3,8 +3,10 @@
     <!--Row-->
     <div class="row">
         <div class="header-title col-8">
-          <i class="fas fa-frog"></i>
-          <h1>Title</h1>
+          <router-link to="/">
+            <i class="fas fa-frog"></i>
+            Title
+          </router-link>
         </div>
         <div class="header-login col-4">
           <a class="header-cart">
@@ -15,8 +17,8 @@
           </a>
           
           <div class="header-nolog">
-            <a class="btn btn-success" href=""><i class="fas fa-user"></i>  Login</a>
-            <a class="btn btn-warning" href=""><i class="fas fa-user-plus"></i>  Sign Up</a>
+            <router-link class="btn btn-success" to="/Login"><i class="fas fa-user"></i>  Login</router-link>
+            <router-link class="btn btn-warning" to="/Registration"><i class="fas fa-user-plus"></i>  Sign Up</router-link>
           </div>
           <div class="header-log" style="visibility: hidden;" v-if="0">
             <span class="profile_pic"></span>

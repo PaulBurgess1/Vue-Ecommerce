@@ -1,28 +1,21 @@
 <template>
   <div class="container">
     <Header></Header>
-    <Registration style="display: none;"></Registration>
-    <Login></Login>
-    <HelloWorld style="display: none;"/>
+    <router-view/>
+    
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import Login from './components/Login.vue'
-import Registration from './components/Registration.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
-    Login,
-    Registration,
-    HelloWorld
   }
 }
 </script>
