@@ -24,19 +24,22 @@
               
               <div class="col mt-3">
                 <h5>Or Sign Up Using</h5>
-                <a class="btn btn-primary btn-floating m-1"
+                <a onclick="alert('Sorry, this part of the site is currently not finished.');"
+                class="btn btn-primary btn-floating m-1"
                     style="background-color: #3b5998;"
                     href="#!"
                     role="button">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a class="btn btn-primary btn-floating m-1"
+                <a onclick="alert('Sorry, this part of the site is currently not finished.');"
+                    class="btn btn-primary btn-floating m-1"
                     style="background-color: #55acee;"
                     href="#!"
                     role="button">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a class="btn btn-primary btn-floating m-1"
+                <a onclick="alert('Sorry, this part of the site is currently not finished.');"
+                    class="btn btn-primary btn-floating m-1"
                     style="background-color: #dd4b39;"
                     href="#!"
                     role="button">
