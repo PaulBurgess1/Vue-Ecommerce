@@ -51,7 +51,7 @@
                 </a>
               </div>
               <h5 class="mt-2">Already Have an Account?</h5>
-              <a href="login.html" class="btn btn-success btn-lg">Login</a>
+              <router-link to="/Login" class="btn btn-success btn-lg">Login</router-link>
             </li>
           </ul>
         </form>

@@ -20,7 +20,7 @@
             <li class="list-group-item bg-dark border border-success">
               <button class="btn btn-success btn-lg w-50" type="submit"><b>Login</b></button>
               <h5>Don't Have an Account?</h5>
-              <a href="#" class="btn btn-warning btn-lg">Sign Up</a>
+              <router-link to="/Registration" class="btn btn-warning btn-lg">Sign Up</router-link>
               
               <div class="col mt-3">
                 <h5>Or Sign Up Using</h5>

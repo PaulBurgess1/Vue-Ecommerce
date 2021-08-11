@@ -1,7 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Registration from '../views/Registration.vue'
+import Product from '../views/Product.vue'
+import NotFound from '../views/NotFound.vue'
+
 
 const routes = [
   {
@@ -27,6 +31,20 @@ const routes = [
     name: 'Registration',
     component: Registration
   },
+  {
+    path: '/product/:id',
+    name: 'Product',
+    component: Product,
+    props: true
+  },
+  //Redirects
+
+  //404 Page
+  {
+    path: '/:catchAll(.*)',
+    name: "NotFound",
+    component: NotFound
+  }
 ]
 
 const router = createRouter({
