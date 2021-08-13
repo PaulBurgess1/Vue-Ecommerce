@@ -37,7 +37,7 @@
             },
             setProduct (data){
                 if(data){
-                    this.product = data[0]["products"][this.prod_id-1];
+                    this.product = data[this.prod_id-1];
                 }
             },
         },

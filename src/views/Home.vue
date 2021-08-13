@@ -4,8 +4,7 @@
     <div class="no-db" v-if="products.length===0"> 
       Error with database, no products 
     </div>
-    <div class="card-deck product-list" v-for="product in products.products" :key="product.id">
-      
+    <div class="card-deck product-list" v-for="product in products" :key="product.id">
       <div class="card product-item">
         <router-link  :to="{ name: 'Product', params: {id: product.id} }">
           <img class="card-img-top" v-bind:src="product.imgurl">
@@ -44,7 +43,8 @@ export default {
   methods:{
     setProducts (data){
       if(data){
-        this.products = data[0];
+        this.products = data;
+        console.log(this.products);
       }
     },
     
@@ -52,13 +52,14 @@ export default {
   },//methods
   //Pre-load
   mounted () {
-      console.log("mounting");
+      
       let q= "https://"+this.PROJECT_ID+".firebaseio.com/products/.json";
       try {
         fetch(q)
         .then(res => {
           if (res.status == 200){
               let data =res.json();
+              //console.log(data);
               return data;
             }
             else{
@@ -70,7 +71,7 @@ export default {
       } catch (error) {
         alert(error.message);
       }
-      console.log(this.products);
+      //console.log(this.products);
     },
 }
 </script>

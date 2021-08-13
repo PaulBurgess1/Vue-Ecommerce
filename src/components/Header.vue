@@ -33,17 +33,18 @@
           <i class="fas fa-bars"></i>
           All
         </span>
-        <span class="category-btn">
-          categories
+        <span class="category-btn" v-for="category in CATEGORIES" :key="category">
+          {{category}}
         </span>
+        
       </div>
     </div>
     <!--Row-->
     <div class="row">
       <div class="header-subcategories col-12">
-        <span class="category-btn">
-          sub-categories
-          </span>
+        <span class="category-btn" v-for="sub_cat in SUB_CATEGORIES" :key="sub_cat">
+          {{sub_cat}}
+        </span>
       </div>
     </div>
 
@@ -58,6 +59,15 @@
 
 export default {
   name: 'Header',
+   data(){
+    return {
+      //Hard coded due to the list having little room for change or addition.
+      CATEGORIES: ["Pet", "Food", "Terrarium", "Habitat Decor", "Lighting/ Heating"],
+      //Hard coded for now may change in the future.
+      SUB_CATEGORIES: ["Amphibian", "Frog", "Reptile", "Turtle/ Tortoise", "Snake"]
+      
+    }
+  },
 }
 </script>
 

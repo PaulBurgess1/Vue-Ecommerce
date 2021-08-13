@@ -17,7 +17,6 @@ export default {
     Header,
     Footer,
   },
- 
 }
 </script>
 
@@ -97,7 +96,7 @@ export default {
   justify-content: center;
   align-items: center;
   align-content: center;
-
+  
 
   appearance: none;
   border: 1px solid rgba(255, 255, 255, 0.2);;
@@ -111,6 +110,7 @@ export default {
 }
 .product-item img{
   max-height: 17rem;
+  
 }
 .card-footer span{
   color: red;
