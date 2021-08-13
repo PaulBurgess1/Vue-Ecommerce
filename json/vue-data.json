@@ -32,6 +32,193 @@
 		"price": 399.99,
 		"sale": 0.0,
 		"desc": "The desert rain frog, web-footed rain frog, or Boulenger's short-headed frog (Breviceps macrops) is a species of frog in the family Brevicipitidae. It is found in Namibia and South Africa. Its natural habitat is the narrow strip of sandy shores between the sea and the sand dunes. It is threatened by habitat loss by such factors as mining and tourism."
-	  }
+	  },
+	{
+		"id": 4,
+		"name": "Small Reptile Terrarium",
+		"imgurl": "https://i5.walmartimages.com/asr/603cf0a1-fcdc-4088-9750-32257a292d05_1.6af52c4c4a4b015eccd654fc2c0b0d1f.jpeg",
+		"category": "Terrarium",
+		"sub-categories":["Reptile"],
+		"stock": 3,
+		"price": 199.99,
+		"sale": 0.0,
+		"desc": "A small terrarium for reptiles. (Habitat decor not included.)"
+	},
+	{
+		"id": 5,
+		"name": "Small Amphibian Terrarium",
+		"imgurl": "https://538431-1720985-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/06/tree-frog-enclosure.jpg",
+		"category": "Terrarium",
+		"sub-categories":["Amphibian"],
+		"stock": 3,
+		"price": 199.99,
+		"sale": 0.0,
+		"desc": "A small terrarium for amphibians. (Habitat decor not included.)"
+	},
+	{
+		"id": 6,
+		"name": "Live Crickets (Pack of 50)",
+		"imgurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Acheta_domesticus%2C_adultes_Weibchen.jpg/1024px-Acheta_domesticus%2C_adultes_Weibchen.jpg",
+		"category": "Food",
+		"sub-categories":["Amphibian","Reptile"],
+		"stock": 100,
+		"price": 4.99,
+		"sale": 0.0,
+		"desc": "A pack of 50 live crickets for amphibious or reptilian pet to enjoy."
+	},
+	{
+		"id": 7,
+		"name": "Live Mealworms (Pack of 30)",
+		"imgurl": "https://cdn11.bigcommerce.com/s-kjx0e8hnh0/images/stencil/1280x1280/products/283/681/Mealworm__16358.1628009983.jpg?c=2",
+		"category": "Food",
+		"sub-categories":["Amphibian","Reptile"],
+		"stock": 20,
+		"price": 4.99,
+		"sale": 0.0,
+		"desc": "A pack of 30 live mealworms for amphibious or reptilian pet to enjoy."
+	},
+	{
+		"id": 8,
+		"name": "Dinosaur Skeleton Habitat Decor",
+		"imgurl": "https://s7d2.scene7.com/is/image/PetSmart/5300309",
+		"category": "Habitat Decor",
+		"sub-categories":["Amphibian","Reptile"],
+		"stock": 10,
+		"price": 9.99,
+		"sale": 0.0,
+		"desc": "A small dinosaur skeleton to decorate your pets terrarium and help them feel like an apex predator."
+	},
+	{
+		"id": 9,
+		"name": "Sunken Pirate Ship Habitat Decor",
+		"imgurl": "https://s7d2.scene7.com/is/image/PetSmart/5255291",
+		"category": "Habitat Decor",
+		"sub-categories":["Amphibian","Reptile"],
+		"stock": 10,
+		"price": 14.99,
+		"sale": 0.0,
+		"desc": "A sunken pirate ship to spice up your pets terrarium. (Pirate booty not included)"
+	},
+	{
+		"id": 10,
+		"name": "Aztec Frog Water Dish",
+		"imgurl": "https://cdn.shopify.com/s/files/1/0259/9167/5959/products/ExoTerra-PT3168-AztecFrogWaterDish-P1-International_1024x.jpg?v=1611172777",
+		"category": "Habitat Decor",
+		"sub-categories":["Amphibian","Reptile", "Frog"],
+		"stock": 10,
+		"price": 34.99,
+		"sale": 0.0,
+		"desc": "An aztec styled water dish in the shape of a frog. (100% Aztec Curse free)"
+	},
+	{
+		"id": 11,
+		"name": "Reptile Heating Lamp",
+		"imgurl": "https://m.media-amazon.com/images/I/613ORm8FsLS._AC_SL1000_.jpg",
+		"category": "Lighting/ Heating",
+		"sub-categories":["Reptile"],
+		"stock": 10,
+		"price": 49.99,
+		"sale": 0.05,
+		"desc": "A heating lamp for your reptile or any other cold-blooded pet."
+	},
+	{
+		"id": 12,
+		"name": "Reptile Infared Heating Lamp",
+		"imgurl": "https://ae01.alicdn.com/kf/Hd9ac5ad4cf0b47f98920cdfbb3e8ede3Q.jpg",
+		"category": "Lighting/ Heating",
+		"sub-categories":["Reptile"],
+		"stock": 10,
+		"price": 69.99,
+		"sale": 0.0,
+		"desc": "An infared heating lamp for your reptile or any other cold-blooded pet."
+	},
+	{
+		"id": 13,
+		"name": "Roti Island snake-necked turtle",
+		"imgurl": "https://ae01.alicdn.com/kf/Hd9ac5ad4cf0b47f98920cdfbb3e8ede3Q.jpg",
+		"category": "Pet",
+		"sub-categories":["Reptile", "Turtle/ Tortoise"],
+		"stock": 0,
+		"price": 69.99,
+		"sale": 0.0,
+		"desc": "The Roti Island snake-necked turtle (Chelodina mccordi ), also commonly known as McCord's snakeneck turtle, is a critically endangered turtle species from Rote Island in Indonesia."
+	},
+	{
+		"id": 14,
+		"name": "Red Eared Slider",
+		"imgurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/RedEaredSlider05.jpg/1280px-RedEaredSlider05.jpg",
+		"category": "Pet",
+		"sub-categories":["Reptile", "Turtle/ Tortoise"],
+		"stock": 5,
+		"price": 29.99,
+		"sale": 0.0,
+		"desc": "The red-eared slider (Trachemys scripta elegans), also known as the red-eared terrapin, red-eared slider turtle, red-eared turtle, slider turtle, and water slider turtle, is a semiaquatic turtle belonging to the family Emydidae. It is a subspecies of the pond slider. It is the most popular pet turtle in the United States and is also popular as a pet across the rest of the world, and is the most invasive turtle. Because of this, it is the most commonly traded species of turtle in the world."
+	},
+	{
+		"id": 15,
+		"name": "Russian Tortoise",
+		"imgurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Testudo_horsfieldii%3B_Baikonur_001.jpg/1280px-Testudo_horsfieldii%3B_Baikonur_001.jpg",
+		"category": "Pet",
+		"sub-categories":["Reptile", "Turtle/ Tortoise"],
+		"stock": 7,
+		"price": 24.99,
+		"sale": 0.0,
+		"desc": "The Russian tortoise (Agrionemys horsfieldii), also commonly known as the Afghan tortoise, the Central Asian tortoise, Horsfield's tortoise, four-clawed tortoise, and the (Russian) steppe tortoise, is a threatened species of tortoise in the family Testudinidae. The species is endemic to Central Asia. Human activities in its native habitat contribute to its threatened status."
+	},
+	{
+		"id": 16,
+		"name": "Crested Gecko",
+		"imgurl": "https://i2.wp.com/reptilianostra.com/wp-content/uploads/2019/04/542920-right-1.jpg?fit=1999%2C2000&ssl=1",
+		"category": "Pet",
+		"sub-categories":["Reptile"],
+		"stock": 7,
+		"price": 24.99,
+		"sale": 0.0,
+		"desc": "The crested gecko or eyelash gecko (Correlophus ciliatus) is a species of gecko native to southern New Caledonia. In 1866, the crested gecko was described by a French zoologist named Alphone Guichenot. This species was thought extinct until it was rediscovered in 1994 during an expedition led by Robert Seipp. Along with several other New Caledonian gecko species, it is being considered for protected status by the Convention on the International Trade in Endangered Species of Wild Flora and Fauna."
+	},
+	{
+		"id": 17,
+		"name": "Corn Snake",
+		"imgurl": "https://wpcdn.us-midwest-1.vip.tn-cloud.net/www.reptilesmagazine.com/content/uploads/data-import/e07767c3/corn-snake-shutterstock_769946884.jpg",
+		"category": "Pet",
+		"sub-categories":["Reptile", "Snake"],
+		"stock": 7,
+		"price": 53.99,
+		"sale": 0.0,
+		"desc": "The corn snake (Pantherophis guttatus) is a North American species of rat snake that subdues its small prey by constriction. It is found throughout the southeastern and central United States. Though superficially resembling the venomous copperhead and often killed as a result of this mistaken identity, corn snakes lack functional venom and are harmless and are beneficial to humans by helping to control populations of wild rodent pests that damage crops and spread disease. The corn snake is named for the species' regular presence near grain stores, where it preys on mice and rats that eat harvested corn (maize). The Oxford English Dictionary cites this usage as far back as 1675. Some sources maintain that the corn snake is so-named because the distinctive, nearly-checkered pattern of the snake's belly scales resembles the kernels of variegated corn."
+	},
+	{
+		"id": 18,
+		"name": "Sarcosuchus",
+		"imgurl": "https://ae01.alicdn.com/kf/Hd9ac5ad4cf0b47f98920cdfbb3e8ede3Q.jpg",
+		"category": "Pet",
+		"sub-categories":["Reptile"],
+		"stock": 1,
+		"price": 1000000.00,
+		"sale": 0.0,
+		"desc": "Sarcosuchus (/ˌsɑːrkoʊˈsuːkəs/; meaning 'flesh crocodile') is an extinct genus of crocodyliform and distant relative of living crocodylians that lived during the Early Cretaceous, from the late Hauterivian to the early Albian, 133 to 112 million years ago of what is now Africa and South America. It was one of the largest crocodile-line reptiles, reaching an average estimate of 9 m (30 ft) and 3.5 metric tons (3.9 short tons), but estimated to grow up to 9.5 m (31 ft) in body length and weigh up to 4.3 metric tons (4.7 short tons). It is known from two species, S. imperator from the early Albian Elrhaz Formation of Niger and S. hartti from the Late Hauterivian of northeastern Brazil, other material is known from Morocco and Tunisia and possibly Libya and Mali."
+	},
+	{
+		"id": 19,
+		"name": "Large Reptile Terrarium",
+		"imgurl": "https://m.media-amazon.com/images/I/71IQMv4ensL._AC_SL1500_.jpg",
+		"category": "Terrarium",
+		"sub-categories":["Reptile"],
+		"stock": 10,
+		"price": 369.99,
+		"sale": 0.0,
+		"desc": "A large terrarium for reptiles. (Habitat decor not included.)"
+	},
+	{
+		"id": 20,
+		"name": "Variety Herbivorous Reptile Feed",
+		"imgurl": "https://qph.fs.quoracdn.net/main-qimg-fac5718be8af520a1d23a0f65d484154.webp",
+		"category": "Food",
+		"sub-categories":["Reptile"],
+		"stock": 10,
+		"price": 69.99,
+		"sale": 0.0,
+		"desc": "A variety of fruits and vegtables suitable for any herbivorous reptiles diet."
+	}
 	]
 }
