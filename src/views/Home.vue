@@ -27,8 +27,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 
 export default {
   name: 'Home',
@@ -44,7 +42,7 @@ export default {
     setProducts (data){
       if(data){
         this.products = data;
-        console.log(this.products);
+        //console.log(this.products);
       }
     },
     
@@ -52,7 +50,6 @@ export default {
   },//methods
   //Pre-load
   mounted () {
-      
       let q= "https://"+this.PROJECT_ID+".firebaseio.com/products/.json";
       try {
         fetch(q)

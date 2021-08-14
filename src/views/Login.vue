@@ -1,7 +1,7 @@
 <template>
     <div class="form-container row">
         <div class="form-box col">
-        <form action="" class="main-form bg-dark w-auto h-auto border border-success">
+        <form @submit.prevent="loginHandle" class="main-form bg-dark w-auto h-auto border border-success">
              <ul class="list-group">
             <li class="list-group-item rounded-0 bg-success">
               <h1 class="text-center">Login!</h1>
@@ -9,11 +9,11 @@
             </li>
             <li class="list-group-item bg-dark">
               <label class="d-block" for="email"><b>Email</b></label>
-              <input type="email" class="form-control" placeholder="Enter Email: " name="email" required>
+              <input type="email" v-model="email" class="form-control" placeholder="Enter Email: " name="email" required>
             </li>
             <li class="list-group-item bg-dark">
               <label class="d-block" for="pword"><b>Password</b></label>
-              <input type="password" class="form-control" placeholder="Enter Password: " name="pword" required>
+              <input type="password" v-model="pword" class="form-control" placeholder="Enter Password: " name="pword" required>
               <small id="passwordHelp" class="d-block form-text text-muted" style="text-align: left;">Forgot your password? <a href="#" class="link">Click here.</a></small>
             </li>
 
@@ -57,8 +57,29 @@
 </template>
 
 <script>
+import {ref} from "vue";
+import firebase from "firebase";
 export default {
   name: 'Login',
+  setup(){
+    const email = ref("");
+    const pword = ref("");
+
+    const loginHandle = () =>{
+      firebase.auth()
+        .signInWithEmailAndPassword(email.value, pword.value)
+        .then(data => {
+          alert("Login Successful. Logged in as "+data.user.email)
+          })
+        .catch(err => alert(err.message));
+
+    }
+    return{
+      loginHandle,
+      email,
+      pword
+    }
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid" id="app">
     <Header></Header>
     <router-view/>
     
@@ -10,6 +10,10 @@
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+//
+import firebase from "firebase"
+import {onBeforeMount} from "vue"
+import {useRouter, useRoute} from "vue-router"
 
 export default {
   name: 'App',
@@ -17,6 +21,25 @@ export default {
     Header,
     Footer,
   },
+  data(){
+    return {
+      reload: 0
+    }
+  },
+  setup(){
+    const router= useRouter();
+    const route = useRoute();
+    onBeforeMount(()=>{
+      firebase.auth().onAuthStateChanged((user)=>{
+        if(user){
+          if(route.path=="/Login" || route.path=='/Registration'){
+            router.replace('/');
+          }
+        }
+      })
+
+    })
+  }
 }
 </script>
 

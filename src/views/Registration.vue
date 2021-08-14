@@ -1,7 +1,7 @@
 <template>
     <div class="form-container row">
         <div class="form-box col">
-            <form class="main-form bg-dark w-auto h-auto border border-warning" action="#"  method="post">
+          <form class="main-form bg-dark w-auto h-auto border border-warning" @submit.prevent="registerHandle" action="#"  method="post">
           <ul class="list-group">
             <li class="list-group-item rounded-0 bg-warning">
               <h1 class="text-center text-dark">Sign Up!</h1>
@@ -9,23 +9,15 @@
             </li>
             <li class="list-group-item bg-dark">
               <label class="d-block" for="email"><b>Email</b></label>
-              <input type="email" class="form-control" placeholder="Enter Email: " name="email" required>
-            </li>
-            <li class="list-group-item bg-dark">
-              <label class="d-block" for="username"><b>User Name</b></label>
-              <input type="text" class="form-control" placeholder="Enter User Name: " name="username" required>
-            </li>
-            <li class="list-group-item bg-dark">
-              <label class="d-block" for="fname"><b>First Name</b></label>
-              <input type="text" class="form-control" placeholder="Enter First Name: " name="fname" required>
-            </li>
-            <li class="list-group-item bg-dark">
-              <label class="d-block" for="lname"><b>Last Name</b></label>
-              <input type="text" class="form-control" placeholder="Enter Last Name: " name="lname" required>
+              <input type="email" v-model="email" class="form-control" placeholder="Enter Email: " name="email" required>
             </li>
             <li class="list-group-item bg-dark">
               <label class="d-block" for="pword"><b>Password</b></label>
-              <input type="password" class="form-control" placeholder="Enter Password: " name="pword" required>
+              <input type="password" v-model="pword" class="form-control" placeholder="Enter Password: " name="pword" required>
+            </li>
+            <li class="list-group-item bg-dark">
+              <label class="d-block" for="pword2"><b>Password</b></label>
+              <input type="password" v-model="pword2" class="form-control" placeholder="Repeat Password: " name="pword2" required>
             </li>
             <li class="list-group-item bg-dark border border-warning">
               <button class="btn btn-warning btn-lg w-50" type="submit"><b>Sign Up</b></button>
@@ -64,8 +56,40 @@
 </template>
 
 <script>
+import {ref} from "vue";
+import firebase from "firebase";
+
 export default {
   name: 'Registration',
+  setup(){
+    const email = ref("");
+    const pword = ref("");
+    const pword2 = ref("");
+
+    const registerHandle = () =>{
+      console.log(pword.value)
+      console.log(pword2.value)
+      if(pword.value === pword2.value){
+        firebase.auth()
+        .createUserWithEmailAndPassword(email.value, pword.value)
+        .then(user =>{
+          alert(user);
+        })
+        .catch(err => alert(err.message));
+        
+      }
+      else{
+        alert("Your passwords don not match. Please enter your passwords again.");
+      }
+
+    }
+    return{
+      registerHandle,
+      email,
+      pword,
+      pword2
+    }
+  }
 }
 </script>
 

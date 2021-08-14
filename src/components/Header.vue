@@ -5,7 +5,7 @@
         <div class="header-title col-8">
           <router-link to="/">
             <i class="fas fa-frog"></i>
-            <span> Paul's Exotic Pet Store</span>
+            <span> Paul's Exotic Pet Store</span> 
           </router-link>
         </div>
         <div class="header-login col-4">
@@ -15,14 +15,14 @@
             </span>
             <i class="fas fa-shopping-cart"></i>
           </a>
-          
-          <div class="header-nolog">
+          <div class="header-nolog" v-if="name===''">
             <router-link class="btn btn-success" to="/Login"><i class="fas fa-user"></i>  Login</router-link>
             <router-link class="btn btn-warning" to="/Registration"><i class="fas fa-user-plus"></i>  Sign Up</router-link>
           </div>
-          <div class="header-log" style="visibility: hidden;" v-if="0">
+          <div class="header-log" v-else>
             <span class="profile_pic"></span>
-            <a class="btn btn-error" href="">Logout</a>
+            <span>Welcome, {{name}}</span>
+            <button @click="logoutHandle" class="btn btn-error">Logout</button>
           </div>
         </div>
     </div>
@@ -56,6 +56,8 @@
 
 <!--Script-->
 <script>
+import {ref, onBeforeMount, onUpdated} from 'vue';
+import firebase from 'firebase';
 
 export default {
   name: 'Header',
@@ -64,8 +66,49 @@ export default {
       //Hard coded due to the list having little room for change or addition.
       CATEGORIES: ["Pet", "Food", "Terrarium", "Habitat Decor", "Lighting/ Heating"],
       //Hard coded for now may change in the future.
-      SUB_CATEGORIES: ["Amphibian", "Frog", "Reptile", "Turtle/ Tortoise", "Snake"]
-      
+      SUB_CATEGORIES: ["Amphibian", "Frog", "Reptile", "Turtle/ Tortoise", "Snake"],
+      trigger: 0
+    }
+  },
+  setup(){
+    
+    var name =ref("");
+    let user =firebase.auth().currentUser;
+    onBeforeMount(()=>{
+      user =firebase.auth().currentUser;
+      console.log("user "+user);
+      if(user){
+        name.value=user.email.split('@')[0]
+      }
+      console.log(name.value)
+    });
+    onUpdated(()=>{
+      user =firebase.auth().currentUser;
+      console.log("user "+user);
+      if(user){
+        name.value=user.email.split('@')[0]
+      }
+      console.log(name.value)
+    });
+    const logoutHandle =() =>{
+      firebase.auth()
+      .signOut()
+      .then(() => name.value="")
+      .catch(err => alert(err.message));
+    }
+    firebase.auth().onAuthStateChanged((user)=>{
+        user =firebase.auth().currentUser;
+        console.log("user "+user);
+        if(user){
+          name.value=user.email.split('@')[0]
+        }
+        console.log(name.value)
+      })
+    
+
+    return{
+      logoutHandle,
+      name
     }
   },
 }
