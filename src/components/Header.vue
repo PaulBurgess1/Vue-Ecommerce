@@ -5,7 +5,7 @@
         <div class="header-title col-8">
           <router-link to="/">
             <i class="fas fa-frog"></i>
-            <span> Paul's Exotic Pet Store</span> 
+            <span> Paul's Pet Store</span> 
           </router-link>
         </div>
         <div class="header-login col-4">
@@ -20,9 +20,8 @@
             <router-link class="btn btn-warning" to="/Registration"><i class="fas fa-user-plus"></i>  Sign Up</router-link>
           </div>
           <div class="header-log" v-else>
-            <span class="profile_pic"></span>
-            <span>Welcome, {{name}}</span>
-            <button @click="logoutHandle" class="btn btn-error">Logout</button>
+            <span><i class="fas fa-smile-beam"></i> Welcome, {{name}}.</span>
+            <button @click="logoutHandle" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</button>
           </div>
         </div>
     </div>
@@ -64,9 +63,9 @@ export default {
    data(){
     return {
       //Hard coded due to the list having little room for change or addition.
-      CATEGORIES: ["Pet", "Food", "Terrarium", "Habitat Decor", "Lighting/ Heating"],
+      CATEGORIES: ["Pet", "Food", "Terrarium", "Habitat Decor", "Lighting/Heating"],
       //Hard coded for now may change in the future.
-      SUB_CATEGORIES: ["Amphibian", "Frog", "Reptile", "Turtle/ Tortoise", "Snake"],
+      SUB_CATEGORIES: ["Amphibian", "Frog", "Reptile", "Turtle/Tortoise", "Snake"],
       trigger: 0
     }
   },
@@ -168,10 +167,19 @@ export default {
     width: 30px;
     height: 30px;
     line-height: 30px;
-
   }
   .header-nolog .btn{
     margin: auto 0.3rem;
+  }
+  .header-log .btn{
+    margin: auto 0.3rem;
+  }
+  .header-log:first-of-type{
+    font-size:2rem;
+  }
+  .header-log span{
+    font-size: 1.2rem;
+    margin: 0 0.3rem;
   }
   /*categories*/
   .header-categories{
@@ -181,6 +189,7 @@ export default {
     min-height: 2rem;
     background-color: 	var(--clr-bg-hf-secondary);
     border-bottom: 1px solid black;
+    overflow: scroll;
   }
   .category-btn{
     background-color: 	var(--clr-bg-hf-btn);
@@ -188,6 +197,7 @@ export default {
     border-radius: 0.4rem;
     border: 1px solid transparent;
     margin-right: 0.6rem;
+    white-space: nowrap;
   }
   .category-btn:hover{
     background-color: 	hsl(210, 10%, 55%);
@@ -200,11 +210,19 @@ export default {
     align-items: center;
     background-color: 	hsl(210, 10%, 35%);
     border-bottom: 1px solid black;
+    overflow: scroll;
+    min-height: 2rem;
   }
   /*Media Queries*/
     @media(max-width: 30rem){
     .header-title{
       font-size: 2rem;
+      justify-content: flex-start;
+      white-space: nowrap;
+    }
+    .header-title span{
+      font-size: 1.3rem;
+      justify-content: flex-start;
     }
     .btn{
       
@@ -219,6 +237,7 @@ export default {
     }
     .header-cart > *{
       font-size: 1.5rem;
+      padding-right: 0.1rem;
     }
     .cart-size{
       font-size:0.9rem;
@@ -226,8 +245,18 @@ export default {
       height: 20px;
       line-height: 20px;
     }
-    .header-nolog{
+    .header-nolog, .header-log{
       display:inline;
+    }
+    .header-log span, .header-log i{
+      display: none;
+    }
+    .header-categories, .header-subcategories{
+      font-size: 95%;
+      justify-content: flex-start;
+    }
+    .category-btn{
+      padding: 0.07rem;
     }
 
 }
