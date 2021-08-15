@@ -189,7 +189,7 @@ export default {
     min-height: 2rem;
     background-color: 	var(--clr-bg-hf-secondary);
     border-bottom: 1px solid black;
-    overflow: scroll;
+    overflow-x: scroll;
   }
   .category-btn{
     background-color: 	var(--clr-bg-hf-btn);
@@ -210,9 +210,12 @@ export default {
     align-items: center;
     background-color: 	hsl(210, 10%, 35%);
     border-bottom: 1px solid black;
-    overflow: scroll;
+    overflow-x: scroll;
     min-height: 2rem;
   }
+  .header-categories::-webkit-scrollbar, .header-subcategories::-webkit-scrollbar {
+    display: none;
+  } 
   /*Media Queries*/
     @media(max-width: 30rem){
     .header-title{
@@ -256,7 +259,10 @@ export default {
       justify-content: flex-start;
     }
     .category-btn{
-      padding: 0.07rem;
+      padding: auto;
+    }
+    .header-categories::-webkit-scrollbar, .header-subcategories::-webkit-scrollbar {
+      display: default;
     }
 
 }

@@ -63,6 +63,7 @@ export default {
   text-align: center;
   color: var(--clr-text);
   background-color: var(--clr-bg);
+  overflow-x: hidden;
 }
 /*Login & Registration*/
 .form-container{
