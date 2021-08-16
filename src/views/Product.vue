@@ -14,8 +14,17 @@
                     <h5 v-else-if="product.sale===0.0">$ {{product.price}}</h5>
                     <h5 v-else><s>$ {{product.price}}</s> <span>$ {{(product.price*(1-product.sale)).toFixed(2)}}</span></h5>
                 </div><!--Footer--> 
-                <button class="backbtn" @click="back">Back to Search</button>
-                <button v-bind:disabled="product.stock===0" @click="addToCart(prod_id)" class="addtocart">Add to Cart.</button>
+                <div v-if="product.stock>0" class="form-floating">
+                    
+                    <select v-model="quantity" class="form-select" id="quantity" name="quantity">
+                        <option v-for="i in product.stock" :key="i" :value="i">
+                            {{i}}
+                        </option>
+                    </select>
+                    <label for="quantity">Quantity:</label>
+                </div>
+                <button class="btn btn-info w-50" @click="back">Back to Search</button>
+                <button v-bind:disabled="product.stock===0" @click="addToCart(prod_id)" class="btn btn-warning w-50">Add to Cart.</button>
           </div>
         </div>
     </div>
@@ -28,7 +37,8 @@
             return {
                 prod_id: this.id,
                 PROJECT_ID: 'vue-ecommerce-9da31-default-rtdb',
-                product:[]
+                product:[],
+                quantity: 1
             }
         },
         methods:{
@@ -45,7 +55,7 @@
                     localStorage.setItem("cart", JSON.stringify([]));
                 }
                 const cartItems = JSON.parse(localStorage.getItem("cart"));
-                cartItems.push(this.product);
+                cartItems.push([this.product,this.quantity]);
                 localStorage.setItem("cart", JSON.stringify(cartItems));
                 //this.cart = JSON.parse(localStorage.getItem("cart"));
                 alert("Added to Cart");
@@ -96,10 +106,4 @@
 </script>
 
 <style>
-.backbtn{
-    width: 50%;
-}
-.addtocart{
-    width: 50%;
-}
 </style>
