@@ -15,7 +15,7 @@
                     <h5 v-else><s>$ {{product.price}}</s> <span>$ {{(product.price*(1-product.sale)).toFixed(2)}}</span></h5>
                 </div><!--Footer--> 
                 <button class="backbtn" @click="back">Back to Search</button>
-                <button class="addtocart">Add to Cart.</button>
+                <button v-bind:disabled="product.stock===0" @click="addToCart(prod_id)" class="addtocart">Add to Cart.</button>
           </div>
         </div>
     </div>
@@ -40,9 +40,37 @@
                     this.product = data[this.prod_id-1];
                 }
             },
+            addToCart() {
+                if (!localStorage.getItem("cart")) {
+                    localStorage.setItem("cart", JSON.stringify([]));
+                }
+                const cartItems = JSON.parse(localStorage.getItem("cart"));
+                cartItems.push(this.product);
+                localStorage.setItem("cart", JSON.stringify(cartItems));
+                //this.cart = JSON.parse(localStorage.getItem("cart"));
+                alert("Added to Cart");
+                //Cart Update Event
+                window.dispatchEvent(new CustomEvent('cartUpdate', {
+                    detail: {
+                        storage: JSON.parse(localStorage.getItem('cart')).length
+                    }
+                    }));
+
+            },
+            getCart() {
+                if (!localStorage.getItem("cart")) {
+                    localStorage.setItem("cart", JSON.stringify([]));
+                }
+                this.cart = JSON.parse(localStorage.getItem("cart"));
+                this.cart_size=this.cart.length
+                //alert("init");
+                },
+            },
+        beforeMount() {
+            this.getCart();
         },
-        mounted () {
-      console.log("mounting");
+    mounted () {
+      //console.log("mounting");
       let q= "https://"+this.PROJECT_ID+".firebaseio.com/products/.json";
       try {
         fetch(q)

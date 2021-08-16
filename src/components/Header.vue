@@ -9,12 +9,12 @@
           </router-link>
         </div>
         <div class="header-login col-4">
-          <a class="header-cart">
-            <span class="cart-size">
-               <p>1</p>
+          <router-link to="/Cart" class="header-cart">
+            <span v-if="cart_size>0" class="cart-size" >
+               <p v-bind:data-size="cart_size">{{cart_size}}</p>
             </span>
             <i class="fas fa-shopping-cart"></i>
-          </a>
+          </router-link>
           <div class="header-nolog" v-if="name===''">
             <router-link class="btn btn-success" to="/Login"><i class="fas fa-user"></i>  Login</router-link>
             <router-link class="btn btn-warning" to="/Registration"><i class="fas fa-user-plus"></i>  Sign Up</router-link>
@@ -66,8 +66,32 @@ export default {
       CATEGORIES: ["Pet", "Food", "Terrarium", "Habitat Decor", "Lighting/Heating"],
       //Hard coded for now may change in the future.
       SUB_CATEGORIES: ["Amphibian", "Frog", "Reptile", "Turtle/Tortoise", "Snake"],
-      trigger: 0
+      cart_size: 0
     }
+  },
+  methods:{
+    getCart() {
+      if (!localStorage.getItem("cart")) {
+        localStorage.setItem("cart", JSON.stringify([]));
+      }
+      this.cart = JSON.parse(localStorage.getItem("cart"));
+      this.cart_size=this.cart.length;
+    },
+  },
+  beforeMount() {
+    this.getCart();
+    window.addEventListener('cartUpdate', (event) => {
+    this.cart_size = event.detail.storage;
+  });
+  },
+  
+  updated(){
+    this.cart_size=JSON.parse(localStorage.getItem("cart")).length;
+  },
+  watch: {
+  localStorage() {
+    this.cart_size=JSON.parse(localStorage.getItem("cart")).length;
+  }
   },
   setup(){
     
@@ -79,7 +103,7 @@ export default {
       if(user){
         name.value=user.email.split('@')[0]
       }
-      console.log(name.value)
+      //console.log(name.value)
     });
     onUpdated(()=>{
       user =firebase.auth().currentUser;
@@ -87,7 +111,7 @@ export default {
       if(user){
         name.value=user.email.split('@')[0]
       }
-      console.log(name.value)
+      //console.log(name.value)
     });
     const logoutHandle =() =>{
       firebase.auth()
@@ -101,7 +125,7 @@ export default {
         if(user){
           name.value=user.email.split('@')[0]
         }
-        console.log(name.value)
+        //console.log(name.value)
       })
     
 
@@ -167,6 +191,9 @@ export default {
     width: 30px;
     height: 30px;
     line-height: 30px;
+  }
+  .cart-size p{
+    content: attr(data-size);
   }
   .header-nolog .btn{
     margin: auto 0.3rem;

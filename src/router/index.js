@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Registration from '../views/Registration.vue'
 import PasswordReset from '../views/PasswordReset.vue'
 import Product from '../views/Product.vue'
+import Cart from '../views/Cart.vue'
 import NotFound from '../views/NotFound.vue'
 
 
@@ -42,6 +43,11 @@ const routes = [
     name: 'Product',
     component: Product,
     props: true
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart
   },
   //Redirects
 

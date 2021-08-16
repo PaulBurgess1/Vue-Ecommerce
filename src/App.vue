@@ -14,7 +14,6 @@ import Footer from './components/Footer.vue'
 import firebase from "firebase"
 import {onBeforeMount} from "vue"
 import {useRouter, useRoute} from "vue-router"
-
 export default {
   name: 'App',
   components: {
@@ -23,7 +22,6 @@ export default {
   },
   data(){
     return {
-      reload: 0
     }
   },
   setup(){
