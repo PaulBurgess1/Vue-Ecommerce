@@ -23,21 +23,7 @@
               <button class="btn btn-warning btn-lg w-50" type="submit"><b>Sign Up</b></button>
               <div class="col">
                 <h5>Or Sign Up Using</h5>
-                <a onclick="alert('Sorry, this part of the site is currently not finished.');"
-                    class="btn btn-primary button-circle btn-floating m-1"
-                    style="background-color: #3b5998;"
-                    href="#!"
-                    role="button">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a onclick="alert('Sorry, this part of the site is currently not finished.');"
-                    class="btn btn-primary button-circle btn-floating m-1"
-                    style="background-color: #55acee;"
-                    href="#!"
-                    role="button">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a onclick="alert('Sorry, this part of the site is currently not finished.');"
+                <a @click="loginGoogle"
                     class="btn btn-primary button-circle btn-floating m-1"
                     style="background-color: #dd4b39;"
                     href="#!"
@@ -83,8 +69,20 @@ export default {
       }
 
     }
+    //Bless Firebase
+    const loginGoogle=() =>{
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+          alert(result.user+"Logged with Google");
+        }).catch((error) => {
+          alert(error.message);
+        });
+    }//loginGoogle
     return{
       registerHandle,
+      loginGoogle,
       email,
       pword,
       pword2
