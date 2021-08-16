@@ -75,7 +75,7 @@ export default {
     let user =firebase.auth().currentUser;
     onBeforeMount(()=>{
       user =firebase.auth().currentUser;
-      console.log("user "+user);
+      //console.log("user "+user);
       if(user){
         name.value=user.email.split('@')[0]
       }
@@ -83,7 +83,7 @@ export default {
     });
     onUpdated(()=>{
       user =firebase.auth().currentUser;
-      console.log("user "+user);
+      //console.log("user "+user);
       if(user){
         name.value=user.email.split('@')[0]
       }
@@ -97,7 +97,7 @@ export default {
     }
     firebase.auth().onAuthStateChanged((user)=>{
         user =firebase.auth().currentUser;
-        console.log("user "+user);
+        //console.log("user "+user);
         if(user){
           name.value=user.email.split('@')[0]
         }

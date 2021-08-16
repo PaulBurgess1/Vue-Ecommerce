@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Registration from '../views/Registration.vue'
+import PasswordReset from '../views/PasswordReset.vue'
 import Product from '../views/Product.vue'
 import NotFound from '../views/NotFound.vue'
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/registration',
     name: 'Registration',
     component: Registration
+  },
+  {
+    path: '/password-reset',
+    name: 'PasswordReset',
+    component: PasswordReset
   },
   {
     path: '/product/:id',

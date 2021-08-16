@@ -14,7 +14,7 @@
             <li class="list-group-item bg-dark">
               <label class="d-block" for="pword"><b>Password</b></label>
               <input type="password" v-model="pword" class="form-control" placeholder="Enter Password: " name="pword" required>
-              <small id="passwordHelp" class="d-block form-text text-muted" style="text-align: left;">Forgot your password? <a href="#" class="link">Click here.</a></small>
+              <small id="passwordHelp" class="d-block form-text text-muted" style="text-align: left;">Forgot your password? <router-link to="/password-reset" class="link">Click here.</router-link></small>
             </li>
 
             <li class="list-group-item bg-dark border border-success">
