@@ -28,11 +28,11 @@
     <!--Row-->
     <div class="row">
       <div class="header-categories col-12">
-        <span class="category-btn">
+        <span @click="resetFilter" class="category-btn">
           <i class="fas fa-bars"></i>
           All
         </span>
-        <span class="category-btn" v-for="category in CATEGORIES" :key="category">
+        <span @click="categoryFilter(category)" class="category-btn" v-for="category in CATEGORIES" :key="category">
           {{category}}
         </span>
         
@@ -41,7 +41,7 @@
     <!--Row-->
     <div class="row">
       <div class="header-subcategories col-12">
-        <span class="category-btn" v-for="sub_cat in SUB_CATEGORIES" :key="sub_cat">
+        <span @click="subcategoryFilter(sub_cat)" class="category-btn" v-for="sub_cat in SUB_CATEGORIES" :key="sub_cat">
           {{sub_cat}}
         </span>
       </div>
@@ -77,6 +77,24 @@ export default {
       this.cart = JSON.parse(localStorage.getItem("cart"));
       this.cart_size=this.cart.length;
     },
+    categoryFilter(category_filter){
+      window.dispatchEvent(new CustomEvent('productFilterCategory', {
+                    detail: {
+                        filter: category_filter
+                    }
+                    }));
+    },
+     subcategoryFilter(subcategory_filter){
+      window.dispatchEvent(new CustomEvent('productFilterSubcategory', {
+                    detail: {
+                        filter: subcategory_filter
+                    }
+                    }));
+    },
+    resetFilter(){
+      window.dispatchEvent(new CustomEvent('resetFilter', {
+                    }));
+    }
   },
   beforeMount() {
     this.getCart();

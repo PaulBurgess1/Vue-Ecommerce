@@ -8,6 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><b>{{product.name}}</b></h5>
                     <p class="card-text">Category: {{product.category}}</p>
+                    <p class="card-text">Subcategories: {{product.subcategories}}</p>
                     <p class="card-text">{{product.desc}}</p>
                 <div class="card-footer">
                     <h5 v-if="product.stock===0"><span>Out Of Stock</span></h5>
