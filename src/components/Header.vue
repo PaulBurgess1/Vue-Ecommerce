@@ -41,7 +41,7 @@
     <!--Row-->
     <div class="row">
       <div class="header-subcategories col-12">
-        <span @click="subcategoryFilter(sub_cat)" class="category-btn" v-for="sub_cat in SUB_CATEGORIES" :key="sub_cat">
+        <span @click="subcategoryFilter(sub_cat);" class="category-btn" v-for="sub_cat in SUB_CATEGORIES" :key="sub_cat">
           {{sub_cat}}
         </span>
       </div>
@@ -139,11 +139,9 @@ export default {
     }
     firebase.auth().onAuthStateChanged((user)=>{
         user =firebase.auth().currentUser;
-        //console.log("user "+user);
         if(user){
           name.value=user.email.split('@')[0]
         }
-        //console.log(name.value)
       })
     
 

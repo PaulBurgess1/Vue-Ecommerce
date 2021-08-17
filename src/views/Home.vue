@@ -42,14 +42,15 @@ export default {
     return {
       PROJECT_ID: 'vue-ecommerce-9da31-default-rtdb',
       query:'',
-      products:[]
+      products:[],
+      all_products:[]
     }
   },
   methods:{
     setProducts (data){
       if(data){
         this.products = data;
-        //console.log(this.products);
+        this.all_products =data;
       }
     },
     getProducts(){
@@ -59,7 +60,6 @@ export default {
         .then(res => {
           if (res.status == 200){
               let data =res.json();
-              //console.log(data);
               return data;
             }
             else{
@@ -71,31 +71,25 @@ export default {
       } catch (error) {
         alert(error.message);
       }
-      //console.log(this.products);
+      
     },//getProducts
     filterByCategory(filter_category){
-      console.log(filter_category);
-      //this.getProducts();
-      let newProducts=[];
-      for (let idx in this.products){
-        console.log(this.products[idx]);
-        if(this.products[idx].category === filter_category){
-          newProducts.push(this.products[idx]);
+      var newProducts=[];
+      console.log(this.all_products)
+      for (let idx in this.all_products){
+        if(this.all_products[idx].category === filter_category){
+          newProducts.push(this.all_products[idx]);
         }
       }
-      console.log(newProducts);
       this.products = newProducts;
-      console.log(this.products);
+     
     },//filterbyCategory
     filterBySubcategory(filter_category){
-      console.log(filter_category);
-      //this.getProducts();
-      let newProducts=[];
-      for (let i in this.products){
-        console.log(this.products[i].subcategories);
-        for(let j in this.products[i].subcategories){
-          if(filter_category === this.products[i].subcategories[j]){
-            newProducts.push(this.products[i]);
+      var newProducts=[];
+      for (let i in this.all_products){
+        for(let j in this.all_products[i].subcategories){
+          if(filter_category === this.all_products[i].subcategories[j]){
+            newProducts.push(this.all_products[i]);
             break;
           }
         }
