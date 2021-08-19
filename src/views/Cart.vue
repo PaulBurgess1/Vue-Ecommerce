@@ -116,7 +116,7 @@ export default {
             cartItems.splice(index, 1);
             localStorage.setItem("cart", JSON.stringify(cartItems));
             this.cart = JSON.parse(localStorage.getItem("cart"));
-            this.subtotal=0.0;
+            this.total=0.0;
             for (let item in this.cart) {
 
                 //console.log(this.cart[item].price);
