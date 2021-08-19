@@ -70,7 +70,7 @@
                     </tbody>
                 </table>
                 <div class="checkout-footer">
-                    <button  class="btn btn-lg btn-warning" v-bind:disabled="cart.length==0">
+                    <button  @click="alert('This is not a real site so you cannot buy anything')" class="btn btn-lg btn-warning" v-bind:disabled="cart.length==0">
                         Proceed to Checkout
                     </button>
                 </div>
