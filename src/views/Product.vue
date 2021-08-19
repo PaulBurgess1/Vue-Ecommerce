@@ -6,9 +6,9 @@
                 
                 <img class="card-img-top" v-bind:src="product.imgurl" >
                 <div class="card-body">
-                    <h5 class="card-title"><b>{{product.name}}</b></h5>
-                    <p class="card-text">Category: {{product.category}}</p>
-                    <p class="card-text">Subcategories: {{product.subcategories}}</p>
+                    <h3 class="card-title"><b>{{product.name}}</b></h3>
+                    <p class="card-text"><b>Category: {{product.category}}</b></p>
+                    <p class="card-text"><b>Subcategories: {{product.subcategories}}</b></p>
                     <p class="card-text">{{product.desc}}</p>
                 <div class="card-footer">
                     <h5 v-if="product.stock===0"><span>Out Of Stock</span></h5>
