@@ -121,7 +121,6 @@ export default {
   
 
   appearance: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);;
   border-radius: 0rem 0rem 1rem 1rem;
   outline: none;
   background-color: rgba(255, 255, 255, 0.4);

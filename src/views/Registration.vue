@@ -12,7 +12,7 @@
               <input type="email" v-model="email" class="form-control" placeholder="Enter Email: " name="email" required>
             </li>
             <li class="list-group-item bg-dark">
-              <label class="d-block" for="pword"><b>Password</b></label>
+              <label class="d-block" for="pword"><b>Password (Must be at least 6 characters)</b></label>
               <input type="password" v-model="pword" class="form-control" placeholder="Enter Password: " name="pword" required>
             </li>
             <li class="list-group-item bg-dark">
@@ -53,13 +53,11 @@ export default {
     const pword2 = ref("");
 
     const registerHandle = () =>{
-      console.log(pword.value)
-      console.log(pword2.value)
       if(pword.value === pword2.value){
         firebase.auth()
         .createUserWithEmailAndPassword(email.value, pword.value)
-        .then(user =>{
-          alert(user);
+        .then(data =>{
+          alert("Account successfully created with email "+data.user.email);
         })
         .catch(err => alert(err.message));
         
